@@ -13,7 +13,7 @@ public class Candidato {
     	}
     	else if (idade > 55) {
             return false;
-        } else if (idade >= 16 && idade <= 18) {
+        } else if (idade >= 16 && idade < 18) {
             return true; // contratação em tempo parcial
         } else {
             return true; // contratação em período integral
