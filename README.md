@@ -38,3 +38,6 @@ Responda:
 $$
 v(G) = E-N+2 = 10 - 8 + 2 = 4
 $$
+
+## Determinar os casos de teste com base nos caminhos
+Lembrar de usar os limites para criação dos testes.
