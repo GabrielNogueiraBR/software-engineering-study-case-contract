@@ -13,10 +13,14 @@ public class Contrato {
 		return this.candidato;
 	}
 	
-	public boolean assinarContrato(OpcaoContratoValido opcao) {
+	public boolean assinarContrato(OpcaoContrato opcao) {
 		int idade = this.candidato.getIdade();
 		
-		if(idade < 16) {
+		if(opcao == OpcaoContrato.SEM_CONTRATO) {
+			this.opcaoContrato = OpcaoContrato.SEM_CONTRATO;
+			return false;
+		}
+		else if(idade < 16) {
 			this.opcaoContrato = OpcaoContrato.SEM_CONTRATO;
 			return false;
     	}
@@ -24,7 +28,7 @@ public class Contrato {
     		this.opcaoContrato = OpcaoContrato.SEM_CONTRATO;
 			return false;
         } else if (idade >= 16 && idade < 18) {
-        	if(opcao ==  OpcaoContratoValido.CONTRATO_PARCIAL) {
+        	if(opcao ==  OpcaoContrato.CONTRATO_PARCIAL) {
         		this.opcaoContrato = OpcaoContrato.CONTRATO_PARCIAL;
         		return true;
         	}
@@ -32,7 +36,7 @@ public class Contrato {
         	this.opcaoContrato = OpcaoContrato.SEM_CONTRATO;
             return false;
         } else {
-            this.opcaoContrato = OpcaoContrato.CONTRATO_INTEGRAL;
+            this.opcaoContrato = opcao;
         	return true;
         }
 	}
