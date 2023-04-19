@@ -13,6 +13,7 @@ public class Contrato {
 		return this.candidato;
 	}
 	
+	
 	public boolean assinarContrato(OpcaoContrato opcao) {
 		int idade = this.candidato.getIdade();
 		

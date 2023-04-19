@@ -1,16 +1,13 @@
 package contratacao;
 
-import java.util.Date;
-
 public class Candidato {
-    private Date dtNascimento;
+    private int idade;
 
-    public Candidato(Date dtNascimento) {
-        this.dtNascimento = dtNascimento;
+    public Candidato(int idade) {
+        this.idade = idade;
     }
     
     public int getIdade() {
-    	Date now = new Date();
-    	return this.dtNascimento.compareTo(now);
+    	return this.idade;
     }
 }
