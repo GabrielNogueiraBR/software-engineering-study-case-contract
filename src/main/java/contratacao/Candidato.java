@@ -6,17 +6,8 @@ public class Candidato {
     public Candidato(int idade) {
         this.idade = idade;
     }
-
-    public OpcaoContrato contratarCandidato() {
-    	if(idade < 16) {
-    		return OpcaoContrato.SEM_CONTRATO;
-    	}
-    	else if (idade > 55) {
-            return OpcaoContrato.SEM_CONTRATO;
-        } else if (idade >= 16 && idade < 18) {
-            return OpcaoContrato.CONTRATO_PARCIAL;
-        } else {
-            return OpcaoContrato.CONTRATO_INTEGRAL;
-        }
+    
+    public int getIdade() {
+    	return this.idade;
     }
 }
