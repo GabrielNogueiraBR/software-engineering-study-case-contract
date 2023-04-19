@@ -1,6 +1,7 @@
 package contratacao;
 
-public class CandidatoTest {
+public class ContratoTest {
 	Candidato candidato;
+	Contrato contrato;
 	
 }
