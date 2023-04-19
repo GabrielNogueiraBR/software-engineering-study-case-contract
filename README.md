@@ -1,4 +1,4 @@
-﻿# Engenharia de Software: Estudo de Caso
+# Engenharia de Software: Estudo de Caso
 Projeto desenvolvido na disciplina de Engenharia de Software II para avaliar a complexidade Ciclomática de um código, bem como, o desenvolvimento dos cenários de testes resultantes dos caminhos descobertos na etapa de complexidade ciclomática.
 
 
@@ -15,3 +15,26 @@ Responda:
 6) Determinar os casos de testes
 7) Implementar em JUNIT como Maven Project
 8) Gerar Dashboard e Explicar a Cobertura de Testes (Print das Imagens)
+
+
+## Grafo de Fluxo
+![image](https://user-images.githubusercontent.com/30303558/233183791-65b97388-477e-4b75-a545-589f91e9ee3f.png)
+
+## Complexidade Ciclomática
+**Caminhos independentes:**
+  ```
+  1-2-8
+  1-3-4-8
+  1-3-5-6-8
+  1-3-5-7-8
+  ```
+
+****Ramos:**** 10
+
+********Nós:******** 8
+
+************************************************Calculo da complexidade:************************************************
+
+$$
+v(G) = E-N+2 = 10 - 8 + 2 = 4
+$$
