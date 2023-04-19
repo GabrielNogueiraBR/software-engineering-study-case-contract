@@ -2,10 +2,15 @@ package contratacao;
 
 public class Contrato {
 	private Candidato candidato;
-	private OpcaoContrato opcaoContrato;
+	// Candidato inicalmente nao possui contrato
+	private OpcaoContrato opcaoContrato = OpcaoContrato.SEM_CONTRATO;
 	
 	public Contrato(Candidato candidato) {
 		this.candidato = candidato;
+	}
+	
+	public Candidato getCandidato() {
+		return this.candidato;
 	}
 	
 	public boolean assinarContrato(OpcaoContratoValido opcao) {
