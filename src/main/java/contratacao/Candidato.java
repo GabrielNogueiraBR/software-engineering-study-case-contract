@@ -7,16 +7,16 @@ public class Candidato {
         this.idade = idade;
     }
 
-    public boolean contratarCandidato() {
+    public OpcaoContrato contratarCandidato() {
     	if(idade < 16) {
-    		return false;
+    		return OpcaoContrato.SEM_CONTRATO;
     	}
     	else if (idade > 55) {
-            return false;
+            return OpcaoContrato.SEM_CONTRATO;
         } else if (idade >= 16 && idade < 18) {
-            return true; // contratação em tempo parcial
+            return OpcaoContrato.CONTRATO_PARCIAL;
         } else {
-            return true; // contratação em período integral
+            return OpcaoContrato.CONTRATO_INTEGRAL;
         }
     }
 }
