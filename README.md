@@ -18,26 +18,34 @@ Responda:
 
 
 ## Grafo de Fluxo
-![image](https://user-images.githubusercontent.com/30303558/233183791-65b97388-477e-4b75-a545-589f91e9ee3f.png)
+![image](https://user-images.githubusercontent.com/30303558/233438065-e3623e1b-6cab-46bc-a8a3-41ca2b690613.png)
+
 
 ## Complexidade Ciclomática
 **Caminhos independentes:**
   ```
-  1-2-8
-  1-3-4-8
-  1-3-5-6-8
-  1-3-5-7-8
+  1-2-3-13
+  1-2-4-5-13
+  1-2-4-6-7-13
+  1-2-4-6-8-9-10-13
+  1-2-4-6-8-9-11-13
+  1-2-4-6-8-12-13
   ```
 
-****Ramos:**** 10
+****Ramos:**** 17
 
-********Nós:******** 8
+********Nós:******** 13
 
 ************************************************Calculo da complexidade:************************************************
 
 $$
-v(G) = E-N+2 = 10 - 8 + 2 = 4
+v(G) = E-N+2 = 17 - 13 + 2 = 6
 $$
+
+Onde:
+- `E` é o número de Ramos
+- `N` é o número de Nós
+
 
 ## Determinar os casos de teste com base nos caminhos
 Lembrar de usar os limites para criação dos testes.
