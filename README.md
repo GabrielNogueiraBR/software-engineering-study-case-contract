@@ -16,6 +16,9 @@ Responda:
 7) Implementar em JUNIT como Maven Project
 8) Gerar Dashboard e Explicar a Cobertura de Testes (Print das Imagens)
 
+## Código e Enumeração segundo Grafo de Fluxo
+![image](https://user-images.githubusercontent.com/30303558/233439138-06e27152-4667-489e-860e-aad22e7fcd1c.png)
+
 
 ## Grafo de Fluxo
 ![image](https://user-images.githubusercontent.com/30303558/233438065-e3623e1b-6cab-46bc-a8a3-41ca2b690613.png)
