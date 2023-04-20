@@ -17,19 +17,8 @@ public class ContratoTest {
 	}
 	
 	@Test
-	public void naoDeveSerContratadoComoContratoIntegral() {
-		candidato = new Candidato(17);
-		contrato = new Contrato(candidato);
-		
-		boolean contratado = contrato.assinarContrato(OpcaoContrato.CONTRATO_INTEGRAL);
-		
-		assertFalse(contratado);
-		assertEquals(contrato.getOpcaoContrato(), OpcaoContrato.SEM_CONTRATO);
-	}
-	
-	@Test
-	public void naoDeveSerContratadoComoContratoParcial() {
-		candidato = new Candidato(57);
+	public void naoDeveSerContratadoAbaixoIdadeMinima() {
+		candidato = new Candidato(14);
 		contrato = new Contrato(candidato);
 		
 		boolean contratado = contrato.assinarContrato(OpcaoContrato.CONTRATO_PARCIAL);
@@ -39,7 +28,29 @@ public class ContratoTest {
 	}
 	
 	@Test
-	public void deveSerContratadoComoContratoIntegral() {
+	public void naoDeveSerContratadoComoContratoIntegralCasoMenor() {
+		candidato = new Candidato(16);
+		contrato = new Contrato(candidato);
+		
+		boolean contratado = contrato.assinarContrato(OpcaoContrato.CONTRATO_INTEGRAL);
+		
+		assertFalse(contratado);
+		assertEquals(contrato.getOpcaoContrato(), OpcaoContrato.SEM_CONTRATO);
+	}
+	
+	@Test
+	public void deveSerContratadoComoContratoParcialCasoMenor() {
+		candidato = new Candidato(17);
+		contrato = new Contrato(candidato);
+		
+		boolean contratado = contrato.assinarContrato(OpcaoContrato.CONTRATO_PARCIAL);
+		
+		assertTrue(contratado);
+		assertEquals(contrato.getOpcaoContrato(), OpcaoContrato.CONTRATO_PARCIAL);
+	}
+	
+	@Test
+	public void deveSerContratadoComoContratoIntegralCasoMaior() {
 		candidato = new Candidato(23);
 		contrato = new Contrato(candidato);
 		
@@ -50,14 +61,48 @@ public class ContratoTest {
 	}
 	
 	@Test
-	public void deveSerContratadoComoContratoParcial() {
-		candidato = new Candidato(33);
+	public void deveSerContratadoComoContratoParcialCasoMaior() {
+		candidato = new Candidato(45);
 		contrato = new Contrato(candidato);
 		
 		boolean contratado = contrato.assinarContrato(OpcaoContrato.CONTRATO_PARCIAL);
 		
 		assertTrue(contratado);
 		assertEquals(contrato.getOpcaoContrato(), OpcaoContrato.CONTRATO_PARCIAL);
+	}
+	
+	@Test
+	public void naoDeveSerContratadoComoContratoIntegralCasoAcimaIdadeMaxima() {
+		candidato = new Candidato(58);
+		contrato = new Contrato(candidato);
+		
+		boolean contratado = contrato.assinarContrato(OpcaoContrato.CONTRATO_INTEGRAL);
+		
+		assertFalse(contratado);
+		assertEquals(contrato.getOpcaoContrato(), OpcaoContrato.SEM_CONTRATO);
+	}
+	
+	@Test
+	public void naoDeveSerContratadoComoContratoParcialCasoAcimaIdadeMaxima() {
+		candidato = new Candidato(60);
+		contrato = new Contrato(candidato);
+		
+		boolean contratado = contrato.assinarContrato(OpcaoContrato.CONTRATO_PARCIAL);
+		
+		assertFalse(contratado);
+		assertEquals(contrato.getOpcaoContrato(), OpcaoContrato.SEM_CONTRATO);
+	}
+	
+
+	@Test
+	public void naoDeveSerContrataoCasoOpcaoContratoInvalida() {
+		candidato = new Candidato(20);
+		contrato = new Contrato(candidato);
+		
+		boolean contratado = contrato.assinarContrato(OpcaoContrato.SEM_CONTRATO);
+		
+		assertFalse(contratado);
+		assertEquals(contrato.getOpcaoContrato(), OpcaoContrato.SEM_CONTRATO);
 	}
 	
 	
